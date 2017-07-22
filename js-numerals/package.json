@@ -1,0 +1,23 @@
+{
+  "name": "assesment",
+  "version": "1.0.0",
+  "description": "Javascript/Frontend Programmer - Exercise 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onlyblank/assessment/tree/master/js-numerals"
+  },
+  "author": "Blanca Pérez - @onlyblank",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^4.3.1",
+    "gulp-sass": "^3.1.0"
+  },
+  "dependencies": {
+    "gulp-util": "^3.0.8"
+  }
+}

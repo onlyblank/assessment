@@ -1,6 +1,9 @@
 function numberToWords(number) {
-	return "one";
+	var units = ["one", "two", "three", "four", "five", "six" , "seven", "eight", "nine"]
+	return units[number - 1]
 }
+
+
 
 if (typeof exports !== 'undefined') {
   exports.numberToWords = numberToWords;

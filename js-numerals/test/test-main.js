@@ -23,7 +23,7 @@ describe('numberToWords', function() {
         assert.equal(NumberToWords.numberToWords(15), "fifteen");
         assert.equal(NumberToWords.numberToWords(16), "sixteen");
         assert.equal(NumberToWords.numberToWords(17), "seventeen");
-        assert.equal(NumberToWords.numberToWords(18), "eightteen");
+        assert.equal(NumberToWords.numberToWords(18), "eighteen");
         assert.equal(NumberToWords.numberToWords(19), "nineteen");
     });
 

@@ -13,4 +13,18 @@ describe('numberToWords', function() {
         assert.equal(NumberToWords.numberToWords(8), "eight");
         assert.equal(NumberToWords.numberToWords(9), "nine");
     });
+
+    it('should return teens in english', function() {
+        assert.equal(NumberToWords.numberToWords(10), "ten");
+        assert.equal(NumberToWords.numberToWords(11), "eleven");
+        assert.equal(NumberToWords.numberToWords(12), "twelve");
+        assert.equal(NumberToWords.numberToWords(13), "thirteen");
+        assert.equal(NumberToWords.numberToWords(14), "fourteen");
+        assert.equal(NumberToWords.numberToWords(15), "fifteen");
+        assert.equal(NumberToWords.numberToWords(16), "sixteen");
+        assert.equal(NumberToWords.numberToWords(17), "seventeen");
+        assert.equal(NumberToWords.numberToWords(18), "eightteen");
+        assert.equal(NumberToWords.numberToWords(19), "nineteen");
+    });
+
 });

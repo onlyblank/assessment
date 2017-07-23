@@ -39,11 +39,13 @@ describe('numberToWords', function() {
 
   it('should return numbers between 100 and 999 in english', function () {
     assert.equal(NumberToWords.numberToWords(100), "one hundred");
-    assert.equal(NumberToWords.numberToWords(299), "two hundred ninety nine");
-    assert.equal(NumberToWords.numberToWords(35), "thirty five");
-    assert.equal(NumberToWords.numberToWords(50), "fifty");
-    assert.equal(NumberToWords.numberToWords(46), "forty six");
-    assert.equal(NumberToWords.numberToWords(74), "seventy four");
+    assert.equal(NumberToWords.numberToWords(299), "two hundred ninety-nine");
+    assert.equal(NumberToWords.numberToWords(435), "four hundred thirty-five");
+    assert.equal(NumberToWords.numberToWords(150), "one hundred fifty");
+    assert.equal(NumberToWords.numberToWords(201), "two hundred one");
+    assert.equal(NumberToWords.numberToWords(746), "seven hundred forty-six");
+    assert.equal(NumberToWords.numberToWords(984), "nine hundred eighty-four");
+    assert.equal(NumberToWords.numberToWords(999), "nine hundred ninety-nine")
   });
 
 

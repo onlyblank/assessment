@@ -48,5 +48,14 @@ describe('numberToWords', function() {
     assert.equal(NumberToWords.numberToWords(999), "nine hundred ninety-nine")
   });
 
+  it('should return greater than 999 in english', function () {
+    assert.equal(NumberToWords.numberToWords(2001), "two thousand one");
+    assert.equal(NumberToWords.numberToWords(3000), "three thousand");
+    assert.equal(NumberToWords.numberToWords(1999), "one thousand nine hundred ninety-nine");
+    assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred ninety-nine");
+    assert.equal(NumberToWords.numberToWords(1017999), "one million seventeen thousand nine hundred ninety-nine");
+  });
+
+
 
 });

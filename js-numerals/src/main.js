@@ -12,7 +12,7 @@ function NumberToWords(){
 		var rem = number % 10;
 
 		if(quo > 1){
-			return `${this.tens[quo-2]} ${rem > 0 ? this.getUnits(rem) : ""}`.trim()
+			return `${this.tens[quo-2]}${rem > 0 ? "-" + this.getUnits(rem) : ""}`.trim()
 		}else{
 			return this.teens[rem];
 		}

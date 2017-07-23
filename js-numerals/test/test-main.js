@@ -29,10 +29,22 @@ describe('numberToWords', function() {
 
   it('should return numbers between 20 and 99 in english', function () {
     assert.equal(NumberToWords.numberToWords(20), "twenty");
-    assert.equal(NumberToWords.numberToWords(99), "ninety nine");
+    assert.equal(NumberToWords.numberToWords(99), "ninety-nine");
+    assert.equal(NumberToWords.numberToWords(35), "thirty-five");    
+    assert.equal(NumberToWords.numberToWords(42), "forty-two");
+    assert.equal(NumberToWords.numberToWords(50), "fifty");
+    assert.equal(NumberToWords.numberToWords(46), "forty-six");
+    assert.equal(NumberToWords.numberToWords(74), "seventy-four");
+  });
+
+  it('should return numbers between 100 and 999 in english', function () {
+    assert.equal(NumberToWords.numberToWords(100), "one hundred");
+    assert.equal(NumberToWords.numberToWords(299), "two hundred ninety nine");
     assert.equal(NumberToWords.numberToWords(35), "thirty five");
     assert.equal(NumberToWords.numberToWords(50), "fifty");
     assert.equal(NumberToWords.numberToWords(46), "forty six");
     assert.equal(NumberToWords.numberToWords(74), "seventy four");
   });
+
+
 });

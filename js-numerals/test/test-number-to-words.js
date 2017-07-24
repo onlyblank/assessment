@@ -1,5 +1,5 @@
 var assert = require('assert');
-var NumberToWords = require('../src/main.js');
+var NumberToWords = require('../src/lib/number_to_words.js');
 
 describe('numberToWords', function() {
   it('should return units in english', function() {

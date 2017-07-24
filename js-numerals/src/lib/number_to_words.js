@@ -12,7 +12,6 @@ function NumberToWords(){
 	this.getTens = function(number){
 		var quo = Math.floor(number / 10);
 		var rem = number % 10;
-
 		return (quo > 1) ? `${this.tens[quo-2]}${rem > 0 ? "-" + this.getUnits(rem) : ""}`.trim() : this.teens[rem];
 	};
 

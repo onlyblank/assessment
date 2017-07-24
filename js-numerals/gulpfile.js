@@ -2,6 +2,10 @@ const gulp = require('gulp');
 const mocha = require('gulp-mocha');
 const sass = require('gulp-sass');
 const inject = require('gulp-inject');
+const gutil = require('gulp-util');
+const uglify = require('gulp-uglify');
+const cssMinify = require('gulp-minify-css');
+const concat = require('gulp-concat');
 
 gulp.task('tests', function() {
   return gulp.src(['test/test-*.js'], {read: false})
@@ -24,12 +28,19 @@ gulp.task('styles', function(){
  
   return gulp.src('src/assets/sass/main.scss')
     .pipe(inject(injectAppFiles, injectAppOptions))
-    .pipe(sass())
-    .pipe(gulp.dest('dist/styles'));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(cssMinify())
+    .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('html', ['styles'],function(){
-	var injectFiles = gulp.src(['dist/styles/main.css']);
+gulp.task('script', function(){
+  gulp.src(['src/lib/*.js', 'src/assets/js/*.js'])
+  .pipe(concat('script.min.js'))   
+  .pipe(gulp.dest('dist/js/'));
+});
+
+gulp.task('html', ['styles', 'script'],function(){
+	var injectFiles = gulp.src(['dist/css/main.css']);
 
 	var injectOptions = {
     addRootSlash: false,
@@ -40,3 +51,4 @@ gulp.task('html', ['styles'],function(){
   	.pipe(inject(injectFiles, injectOptions))
     .pipe(gulp.dest('dist'))
 });
+

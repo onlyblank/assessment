@@ -9,15 +9,20 @@
 </head>
 <body>
 	<section class="form-container">
-			<label for="number">Número</label>
+		<span class="input">
+			<label for="number">Number</label>
 			<input type="number" id="number">
-			<a href="#" id="calcular">Calcular numero</a>
+		</span>
+		<a href="#" id="get-text">Get text</a>		
 	</section>
 
-	<section id="words">
-		
+	<section id="words" class="number-words">
+		<div class="undo">
+			<i class="fa fa-undo" aria-hidden="true"></i>
+		</div>
 	</section>
 
+	
 	<!-- inject:js -->
   <!-- endinject -->
 	<script src="js/script.min.js"></script> 

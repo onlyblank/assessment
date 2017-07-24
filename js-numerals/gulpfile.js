@@ -13,7 +13,9 @@ gulp.task('tests', function() {
 });
  
 gulp.task('styles', function(){
-  var injectAppFiles = gulp.src('src/assets/sass/*.scss', {read: false});
+  var injectAppFiles = gulp.src(['src/assets/sass/_variables.scss', 
+    'src/assets/sass/*.scss', 
+    '!src/assets/sass/main.scss'], {read: false});
  
   function transformFilepath(filepath) {
     return '@import "' + filepath + '";';
@@ -21,8 +23,8 @@ gulp.task('styles', function(){
  
   var injectAppOptions = {
     transform: transformFilepath,
-    starttag: '// inject:app',
-    endtag: '// endinject',
+    starttag: '// import-scss-files',
+    endtag: '// end import-scss-files',
     addRootSlash: false
   };
  

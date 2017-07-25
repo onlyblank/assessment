@@ -2,9 +2,9 @@
 	box-sizing: border-box;
 }
 body {
-  background-color: $bck-color;
-  color: $text-color;
-  font-family: 'Montserrat', sans-serif;
+	background-color: $bck-color;
+	color: $text-color;
+	font-family: 'Montserrat', sans-serif;
 }
 .form-container{
 	display: flex;
@@ -27,7 +27,7 @@ body {
 		}
 		input{
 			padding: 3vw;
-	    width: 100%;
+			width: 100%;
 			background: transparent;
 			color: $bck-color;
 			font-size: 2vw;
@@ -38,13 +38,13 @@ body {
 	#get-text{
 		background-color: $input-color;
 		margin-top: 2vw;
-    padding: 3vw;
-    width: 50%;
-    text-decoration: none;
-    font-weight: bold;
-    color: #696969;
-    text-align: center;
-    font-size: 3vw;
+		padding: 3vw;
+		width: 50%;
+		text-decoration: none;
+		font-weight: bold;
+		color: #696969;
+		text-align: center;
+		font-size: 3vw;
 	}
 }
 .reveal-text,

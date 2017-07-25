@@ -1,0 +1,30 @@
+@media (max-width: $screen-xs-max) {
+	.form-container{
+		.input{
+			width: 80%;
+			label{
+				top: -12vw;
+			}
+			label, input{
+				font-size: 8vw;
+			}
+		}
+		#get-text{
+			width: 80%;
+			font-size: 8vw;
+		}
+	}
+
+	.number-words{
+		.undo{
+			top: 2vw;
+			right: 4vw;			
+			font-size: 12vw;
+		}
+	}
+
+	.reveal-text {
+		font-size: 12vw;
+		padding: 0 6vw;
+	}
+}

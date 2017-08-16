@@ -48,6 +48,13 @@ describe('numberToWords', function() {
     assert.equal(NumberToWords.numberToWords(999), "nine hundred ninety-nine")
   });
 
+  it('should return special hundreds in english', function () {
+    assert.equal(NumberToWords.numberToWords(1999), "nineteen hundred and ninety-nine");
+    assert.equal(NumberToWords.numberToWords(1500), "fifteen hundred");
+    assert.equal(NumberToWords.numberToWords(2000), "two thousand");
+    assert.equal(NumberToWords.numberToWords(1648), "sixteen hundred forty-eight");
+  });
+
   it('should return greater than 999 in english', function () {
     assert.equal(NumberToWords.numberToWords(2001), "two thousand one");
     assert.equal(NumberToWords.numberToWords(3000), "three thousand");

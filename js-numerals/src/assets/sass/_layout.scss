@@ -83,7 +83,7 @@ body {
 
 .reveal-text {
 	margin: 0;
-	padding: 0 3vw;
+	padding: 0 5vw;
 	position: relative;
 	font-size: 8vw;
 	display: flex;
@@ -95,6 +95,7 @@ body {
 	cursor: default;	
 	height: 100vh;
 	text-transform: uppercase;
+	overflow: scroll-y;
 	&:after {
 		content: "";
 		position: absolute;

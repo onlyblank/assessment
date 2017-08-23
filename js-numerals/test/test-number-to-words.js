@@ -61,6 +61,7 @@ describe('numberToWords', function() {
     assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred and ninety-nine");
     assert.equal(NumberToWords.numberToWords(1017999), "one million seventeen thousand nine hundred and ninety-nine");
     assert.equal(NumberToWords.numberToWords(17010), "seventeen thousand and ten");
+    assert.equal(NumberToWords.numberToWords(900000000), "nine hundred million");
   });
 
   it('should return the actual testcases in english', function () {

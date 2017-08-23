@@ -39,13 +39,13 @@ describe('numberToWords', function() {
 
   it('should return numbers between 100 and 999 in english', function () {
     assert.equal(NumberToWords.numberToWords(100), "one hundred");
-    assert.equal(NumberToWords.numberToWords(299), "two hundred ninety-nine");
-    assert.equal(NumberToWords.numberToWords(435), "four hundred thirty-five");
-    assert.equal(NumberToWords.numberToWords(150), "one hundred fifty");
-    assert.equal(NumberToWords.numberToWords(201), "two hundred one");
-    assert.equal(NumberToWords.numberToWords(746), "seven hundred forty-six");
-    assert.equal(NumberToWords.numberToWords(984), "nine hundred eighty-four");
-    assert.equal(NumberToWords.numberToWords(999), "nine hundred ninety-nine")
+    assert.equal(NumberToWords.numberToWords(299), "two hundred and ninety-nine");
+    assert.equal(NumberToWords.numberToWords(435), "four hundred and thirty-five");
+    assert.equal(NumberToWords.numberToWords(150), "one hundred and fifty");
+    assert.equal(NumberToWords.numberToWords(201), "two hundred and one");
+    assert.equal(NumberToWords.numberToWords(746), "seven hundred and forty-six");
+    assert.equal(NumberToWords.numberToWords(984), "nine hundred and eighty-four");
+    assert.equal(NumberToWords.numberToWords(999), "nine hundred and ninety-nine")
   });
 
   it('should return special hundreds in english', function () {
@@ -56,12 +56,17 @@ describe('numberToWords', function() {
   });
 
   it('should return greater than 999 in english', function () {
-    assert.equal(NumberToWords.numberToWords(2001), "two thousand one");
+    assert.equal(NumberToWords.numberToWords(2001), "two thousand and one");
     assert.equal(NumberToWords.numberToWords(3000), "three thousand");
-    assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred ninety-nine");
-    assert.equal(NumberToWords.numberToWords(1017999), "one million seventeen thousand nine hundred ninety-nine");
+    assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred and ninety-nine");
+    assert.equal(NumberToWords.numberToWords(1017999), "one million seventeen thousand nine hundred and ninety-nine");
+    assert.equal(NumberToWords.numberToWords(17010), "seventeen thousand and ten");
   });
 
-
-
+  it('should return the actual testcases in english', function () {
+    assert.equal(NumberToWords.numberToWords(7), "seven");
+    assert.equal(NumberToWords.numberToWords(42), "forty-two");
+    assert.equal(NumberToWords.numberToWords(2001), "two thousand and one");
+    assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred and ninety-nine");
+  });
 });

@@ -21,7 +21,7 @@ function NumberToWords(){
 		var hundred = "";
 		hundred += quo > 0 ? `${this.getUnits(quo)} ${this.hundred}`: "";
 		if(rem > 0){
-			hundred += ` ${rem > 10 ? this.getTens(rem) : this.getUnits(rem)}`
+			hundred += ` and ${rem > 10 ? this.getTens(rem) : this.getUnits(rem)}`
 		}
 		return hundred
 	};
@@ -30,14 +30,15 @@ function NumberToWords(){
 		var text = "";
 		var c = 0;
 		for(var i = array.length - 1; i > 0 ; i--){
-			text += array[c] + " " + this.biggest[i-1] + " "; 
+			text += `${array[c]} ${this.biggest[i-1]} `; 
 			c++;
 		}
 		text += array[array.length - 1] ? array[array.length - 1] : "";
 		return text.trim();
 	}
 
-	this.getBiggestSpecial = function(array){
+	this.getBiggestSpecial = function(splitted){
+		var array = [splitted[0]*10 + Math.floor(splitted[1] / 100), splitted[1] % 100];
 		return `${this.baseTranslator(array[0])} ${this.hundred} ${array[1] > 0 ? "and " + this.baseTranslator(array[1]) : "" }`.trim();
 	}
 
@@ -66,15 +67,21 @@ function NumberToWords(){
 	this.translator = function(number){
 		var splitted = this.splitNumber(number);
 		var realThis = this;
+		var toWords = "";
+		var spaceSplit;
 		if(splitted.length == 2 && splitted[0] < 2){
-			var quo = Math.floor(splitted[1] / 100);
-			var rem = splitted[1] % 100; 	
-			return this.getBiggestSpecial([splitted[0]*10 + quo, rem]);	
+			toWords = this.getBiggestSpecial(splitted);	
 		}else{
-			return this.getBiggest(splitted.map(function(e){
+			toWords = this.getBiggest(splitted.map(function(e){
 				return realThis.baseTranslator(e);
-			}))
+			}));
+			if(splitted.length - 1 > 0 && splitted[splitted.length - 1] < 100 && splitted[splitted.length - 1] > 0){
+				spaceSplit = toWords.split(" ");
+				spaceSplit.splice(parseInt(spaceSplit.length)-1,0,"and");
+				toWords = spaceSplit.join(" ");
+			}
 		}
+		return toWords;
 	}
 }
 

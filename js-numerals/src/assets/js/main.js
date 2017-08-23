@@ -3,15 +3,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var event = e || window.event;
 		var key = event.keyCode || event.which;
 		var keyChar;
-		keyChar = String.fromCharCode( key );
 		var regex = /[0-9]|\./;
+		keyChar = String.fromCharCode( key );
 		if(key == 13){
 			translateInput(e);
+		}else if(key == 8){
+			event.returnValue = true;
 		}else if( !regex.test(keyChar) ) {
 			event.returnValue = false;
 			if(event.preventDefault) event.preventDefault();
 		}
-	}
+	};
 
 	var translateInput = function(e){
 		e.preventDefault();
@@ -33,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		var event = e || window.event;
 		var key = event.keyCode || event.which;
 		if(key == 27 || key == 8) toggleShow();
-	}
+	};
 
 	var toggleShow = function(){
 		var words = document.getElementById("words");

@@ -30,7 +30,7 @@ function NumberToWords(){
 		var text = "";
 		var c = 0;
 		for(var i = array.length - 1; i > 0 ; i--){
-			text += `${array[c]} ${this.biggest[i-1]} `; 
+			if(array[c]) text += `${array[c]} ${this.biggest[i-1]} `; 
 			c++;
 		}
 		text += array[array.length - 1] ? array[array.length - 1] : "";
@@ -66,6 +66,7 @@ function NumberToWords(){
 
 	this.translator = function(number){
 		var splitted = this.splitNumber(number);
+		console.log(splitted);
 		var realThis = this;
 		var toWords = "";
 		var spaceSplit;

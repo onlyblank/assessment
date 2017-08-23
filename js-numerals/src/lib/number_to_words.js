@@ -3,7 +3,7 @@ function NumberToWords(){
 	this.teens = ["ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", "seventeen", "eighteen", "nineteen"];
 	this.tens = ["twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 	this.hundred = "hundred";
-	this.biggest = ["thousand", "million", "billion"]
+	this.biggest = ["thousand", "million", "billion", "trillion", "quadrillion", "quintillion", "sextillion", "septillion", "octillion", "nonillion", "decillion", "undecillion", "duodecillion", "tredecillion", "quatttuor-decillion", "quindecillion", "sexdecillion", "septen-decillion", "octodecillion", "novemdecillion", "vigintillion"];
 
 	this.getUnits = function(number){
 		return this.units[number-1]

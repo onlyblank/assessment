@@ -37,6 +37,10 @@ function NumberToWords(){
 		return text.trim();
 	}
 
+	this.getBiggestSpecial = function(array){
+		return `${this.baseTranslator(array[0])} ${this.hundred} ${array[1] > 0 ? "and " + this.baseTranslator(array[1]) : "" }`.trim();
+	}
+
 	this.splitNumber = function(number) {
 		var array = [];
 		var aux = "";
@@ -62,9 +66,15 @@ function NumberToWords(){
 	this.translator = function(number){
 		var splitted = this.splitNumber(number);
 		var realThis = this;
-		return this.getBiggest(splitted.map(function(e){
-			return realThis.baseTranslator(e);
-		}))
+		if(splitted.length == 2 && splitted[0] < 2){
+			var quo = Math.floor(splitted[1] / 100);
+			var rem = splitted[1] % 100; 	
+			return this.getBiggestSpecial([splitted[0]*10 + quo, rem]);	
+		}else{
+			return this.getBiggest(splitted.map(function(e){
+				return realThis.baseTranslator(e);
+			}))
+		}
 	}
 }
 

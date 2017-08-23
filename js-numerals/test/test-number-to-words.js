@@ -52,13 +52,12 @@ describe('numberToWords', function() {
     assert.equal(NumberToWords.numberToWords(1999), "nineteen hundred and ninety-nine");
     assert.equal(NumberToWords.numberToWords(1500), "fifteen hundred");
     assert.equal(NumberToWords.numberToWords(2000), "two thousand");
-    assert.equal(NumberToWords.numberToWords(1648), "sixteen hundred forty-eight");
+    assert.equal(NumberToWords.numberToWords(1648), "sixteen hundred and forty-eight");
   });
 
   it('should return greater than 999 in english', function () {
     assert.equal(NumberToWords.numberToWords(2001), "two thousand one");
     assert.equal(NumberToWords.numberToWords(3000), "three thousand");
-    assert.equal(NumberToWords.numberToWords(1999), "one thousand nine hundred ninety-nine");
     assert.equal(NumberToWords.numberToWords(17999), "seventeen thousand nine hundred ninety-nine");
     assert.equal(NumberToWords.numberToWords(1017999), "one million seventeen thousand nine hundred ninety-nine");
   });
